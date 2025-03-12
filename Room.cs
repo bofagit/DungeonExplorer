@@ -19,13 +19,14 @@ namespace DungeonExplorer
         {
             return description;
         }
-
+        
         public void removeItem(string item)
         {
             List<string> itemsList = new List<string>(items);
             itemsList.Remove(item);
             items = itemsList.ToArray();
         }
+
 
         public string getrandomItem()
         {

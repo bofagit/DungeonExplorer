@@ -1,4 +1,4 @@
-// This file contains the Monster class, which is used to represent a monster in the game.
+﻿// This file contains the Monster class, which is used to represent a monster in the game.
 namespace DungeonExplorer
 {
     public class Monster
@@ -10,7 +10,7 @@ namespace DungeonExplorer
         public Monster(double health, double damage, int difficulty)
         {
             // Initialize the monster with the given health, damage, and difficulty
-            
+
             this.health = health;
             this.damage = damage;
             this.difficulty = difficulty;
@@ -19,10 +19,10 @@ namespace DungeonExplorer
         public void takeDamage(double damage)
         {
             // Reduce the monster's health by the given amount of damage
-            
+
             health -= damage;
         }
 
-        
+
     }
 }

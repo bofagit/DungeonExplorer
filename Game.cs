@@ -46,7 +46,7 @@ namespace DungeonExplorer
             {
                 return 0;
             }
-        } 
+        }
 
         public Game()
         {
@@ -228,10 +228,19 @@ namespace DungeonExplorer
                                 }
                                 Console.WriteLine(currentRoom.getDescription());
                                 Console.WriteLine("1. Open the door");
-                                string answer = Console.ReadLine();
-                                while (playing == true && answer != "1")
+                                int answer = 0;
+                                try
                                 {
-                                    if (answer == "1")
+                                    answer = int.Parse(Console.ReadLine());
+                                }
+                                catch (Exception)
+                                {
+                                    Console.WriteLine("Invalid input.");
+                                }
+                                
+                                while (playing == true && answer == 1)
+                                {
+                                    if (answer == 1)
                                     {
                                         Console.Clear();
                                         Console.WriteLine("You open the door and walk through it.");
@@ -355,7 +364,7 @@ namespace DungeonExplorer
                                                 Console.WriteLine("You run away from the monster.");
                                                 player.removeScore(100);
                                                 infight = false;
-                                            }   
+                                            }
                                             break;
                                         default:
                                             Console.Clear();
@@ -491,7 +500,7 @@ namespace DungeonExplorer
                             //ends the game
                             Console.WriteLine("Thanks for playing!");
                             playing = false;
-                            break; 
+                            break;
                         default:
                             Console.Clear();
                             Console.WriteLine("Invalid input.");
@@ -502,7 +511,7 @@ namespace DungeonExplorer
                 {
                     Console.WriteLine("Invalid input.");
                 }
-                
+
             }
         }
     }
