@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DungeonExplorer
 {
@@ -6,9 +7,9 @@ namespace DungeonExplorer
     {
         public string Name { get; private set; }
         public double Health { get; private set; }
-        public int steps { get; private set; }
-        public double score { get; private set; }
-        private List<string> inventory = new List<string>();
+        public int Steps { get; private set; }
+        public double Score { get; private set; }
+        private List<string> Inventory = new List<string>();
 
         public Player(string name, int health) 
         {
@@ -17,17 +18,17 @@ namespace DungeonExplorer
         }
         public void addScore(int points)
         {
-            score += points;
+            Score += points;
         }
         public void removeScore(int points)
         {
-            score -= points;
+            Score -= points;
         }
         public void pickupItem(string item)
         {
             if (item != null)
             {
-                inventory.Add(item);
+                Inventory.Add(item);
             }
         }
         public void potionEffect()
@@ -41,11 +42,19 @@ namespace DungeonExplorer
         }
         public void move()
         {
-            steps++;
+            Steps++;
         }  
         public string inventoryContents()
         {
-            return string.Join(", ", inventory);
+            return string.Join(", ", Inventory);
+        }
+        public void Status()
+        {
+            Console.Clear();
+            System.Console.WriteLine("Name: " + Name);
+            System.Console.WriteLine("Health: " + Health);
+            System.Console.WriteLine("Score: " + Score);
+            System.Console.WriteLine("Steps: " + Steps);
         }
     }
 }

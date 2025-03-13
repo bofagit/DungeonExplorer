@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DungeonExplorer
 {
@@ -22,7 +23,8 @@ namespace DungeonExplorer
         
         public void removeItem(string item)
         {
-            List<string> itemsList = new List<string>(items);
+            //code to remove items the player has already picked up in previous rooms
+            List<string> itemsList = items.ToList();
             itemsList.Remove(item);
             items = itemsList.ToArray();
         }

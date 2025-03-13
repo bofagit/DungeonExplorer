@@ -3,24 +3,27 @@ namespace DungeonExplorer
 {
     public class Monster
     {
-        public double health { get; private set; }
-        public double damage { get; private set; }
-        public int difficulty { get; private set; }
+        public double Health { get; private set; }
+        public double Damage { get; private set; }
+        public int Difficulty { get; private set; }
 
         public Monster(double health, double damage, int difficulty)
         {
             // Initialize the monster with the given health, damage, and difficulty
 
-            this.health = health;
-            this.damage = damage;
-            this.difficulty = difficulty;
+            this.Health = health;
+            this.Damage = damage;
+            this.Difficulty = difficulty;
         }
 
         public void takeDamage(double damage)
         {
             // Reduce the monster's health by the given amount of damage
-
-            health -= damage;
+            Health -= damage;
+            if (Health < 0)
+            {
+                Health = 0;
+            }
         }
 
 
